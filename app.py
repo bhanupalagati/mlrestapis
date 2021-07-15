@@ -6,7 +6,11 @@ from pokemoncluster.serve import PokemonClusteredData, PokemonBorders, PokemonCl
 app = Flask(__name__)
 api = Api(app)
 
+class MainRoute(Resource):
+    def get(self):
+        return []
 
+api.add_resource(MainRoute, "/")
 api.add_resource(CovidCases, "/covidcases")
 api.add_resource(PokemonClusteredData, "/pokemoncluster/data")
 api.add_resource(PokemonBorders, "/pokemoncluster/borders")
