@@ -3,7 +3,7 @@ from flask_restful import Resource
 from flask import jsonify, request
 import pickle
 
-file_name = "pokemoncluster/pokemoncluster.pkl"
+file_name = "pokemoncluster/pokemonCluster.pkl"
 open_file = open(file_name, "rb")
 # [clusteredData, model, maxDetails, minDetails]
 loaded_list = pickle.load(open_file)
