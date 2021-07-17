@@ -2,8 +2,10 @@ from flask import Flask, jsonify
 from flask_restful import Api, Resource
 from covidcases.serve import CovidCases
 from pokemoncluster.serve import PokemonClusteredData, PokemonBorders, PokemonClassify
+from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"*": {"origins": "*"}})
 api = Api(app)
 
 class MainRoute(Resource):
